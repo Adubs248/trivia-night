@@ -4,7 +4,6 @@ const jwt = require('jsonwebtoken');
 const db = require('../db');
 const router = express.Router();
 
-// POST /api/auth/register
 router.post('/register', async (req, res) => {
   const { email, password, displayName } = req.body;
   if (!email || !password) return res.status(400).json({ error: 'Email and password required.' });
@@ -18,12 +17,13 @@ router.post('/register', async (req, res) => {
     const token = jwt.sign({ hostId: host.id }, process.env.JWT_SECRET, { expiresIn: '7d' });
     res.json({ token, host });
   } catch (err) {
+    console.error('Register error:', err.message);
     if (err.code === '23505') return res.status(409).json({ error: 'Email already registered.' });
-    res.status(500).json({ error: 'Registration failed.' });
+    if (err.message.includes('hosts')) return res.status(500).json({ error: 'Database table not ready. Please try again in 30 seconds.' });
+    res.status(500).json({ error: err.message });
   }
 });
 
-// POST /api/auth/login
 router.post('/login', async (req, res) => {
   const { email, password } = req.body;
   try {
@@ -35,7 +35,8 @@ router.post('/login', async (req, res) => {
     const token = jwt.sign({ hostId: host.id }, process.env.JWT_SECRET, { expiresIn: '7d' });
     res.json({ token, host: { id: host.id, email: host.email, displayName: host.display_name } });
   } catch (err) {
-    res.status(500).json({ error: 'Login failed.' });
+    console.error('Login error:', err.message);
+    res.status(500).json({ error: err.message });
   }
 });
 
