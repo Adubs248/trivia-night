@@ -179,6 +179,7 @@ function registerSocketHandlers(io) {
         gameState[gameCode].timerTick = setInterval(() => {
           remaining--;
           gameState[gameCode].timeRemaining = remaining;
+          io.to(gameCode).emit('timer_tick', { remaining });
           io.to(`host:${gameCode}`).emit('timer_tick', { remaining });
           if (remaining <= 0) clearInterval(gameState[gameCode].timerTick);
         }, 1000);
@@ -310,6 +311,11 @@ function registerSocketHandlers(io) {
           correctAnswer: question.correct_answer,
           explanation: question.explanation,
         });
+
+        // Update leaderboard after every reveal
+        const lb = await getLeaderboard(socket.data.gameId);
+        io.to(gameCode).emit('leaderboard_update', { leaderboard: lb });
+        io.to(`host:${gameCode}`).emit('leaderboard_update', { leaderboard: lb });
 
         callback({ success: true });
       } catch (err) {
