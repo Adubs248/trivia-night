@@ -43,8 +43,15 @@ app.use('/api/players', playerRoutes);
 app.use('/api/media', mediaRoutes);
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-app.get('/api/health', (_req, res) => res.json({ status: 'ok', players: io.engine.clientsCount }));
+app.get('/api/health', (_req, res) => res.json({ 
+  status: 'ok', 
+  players: io.engine.clientsCount,
+  dbUrl: process.env.DATABASE_URL ? process.env.DATABASE_URL.slice(0, 35) + '...' : 'NOT SET',
+  nodeEnv: process.env.NODE_ENV || 'not set',
+}));
 
+// ---- Serve React build ----
+// Check multiple paths since Railway working directory can vary
 const possiblePaths = [
   path.join(__dirname, '../client/dist'),
   path.join(process.cwd(), 'client/dist'),
