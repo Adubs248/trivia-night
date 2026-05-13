@@ -8,7 +8,7 @@ import { useEffect, useRef, useCallback } from 'react';
 import { io } from 'socket.io-client';
 import { useGameStore } from '../store/gameStore';
 
-const SOCKET_URL = import.meta.env.VITE_SERVER_URL || 'http://localhost:3001';
+const SOCKET_URL = window.location.origin;
 
 let socketInstance = null;
 
