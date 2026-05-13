@@ -1,0 +1,12 @@
+{
+  "name": "trivia-night",
+  "version": "1.0.0",
+  "description": "TriviaNight — Live event trivia for 120 players",
+  "scripts": {
+    "build": "cd client && npm install && npm run build",
+    "start": "cd server && npm install && node scripts/migrate.js && node index.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

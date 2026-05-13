@@ -1,0 +1,144 @@
+[
+  {
+    "round": "General Knowledge",
+    "questions": [
+      {
+        "question_text": "What is the capital city of Australia?",
+        "question_type": "multiple_choice",
+        "options": [
+          { "letter": "A", "text": "Sydney" },
+          { "letter": "B", "text": "Melbourne" },
+          { "letter": "C", "text": "Canberra" },
+          { "letter": "D", "text": "Brisbane" }
+        ],
+        "correct_answer": "C",
+        "points": 100,
+        "timer_seconds": 30,
+        "explanation": "Canberra became Australia's capital in 1913, chosen as a compromise between rival cities Sydney and Melbourne."
+      },
+      {
+        "question_text": "How many sides does a heptagon have?",
+        "question_type": "multiple_choice",
+        "options": [
+          { "letter": "A", "text": "5" },
+          { "letter": "B", "text": "6" },
+          { "letter": "C", "text": "7" },
+          { "letter": "D", "text": "8" }
+        ],
+        "correct_answer": "C",
+        "points": 100,
+        "timer_seconds": 20
+      },
+      {
+        "question_text": "The Great Wall of China is visible from space.",
+        "question_type": "true_false",
+        "options": [
+          { "letter": "A", "text": "True" },
+          { "letter": "B", "text": "False" }
+        ],
+        "correct_answer": "B",
+        "points": 80,
+        "timer_seconds": 15,
+        "explanation": "This is a common myth — the wall is too narrow to be seen from space with the naked eye."
+      },
+      {
+        "question_text": "Which element has the chemical symbol 'Au'?",
+        "question_type": "short_answer",
+        "correct_answer": "Gold",
+        "points": 120,
+        "timer_seconds": 25,
+        "explanation": "Au comes from the Latin word 'Aurum', meaning gold."
+      },
+      {
+        "question_text": "Unscramble: RABIT EGSAM (hint: two words)",
+        "question_type": "anagram",
+        "correct_answer": "TRIVIA GAMES",
+        "points": 150,
+        "timer_seconds": 40
+      }
+    ]
+  },
+  {
+    "round": "Science & Nature",
+    "questions": [
+      {
+        "question_text": "Which planet has the most moons in our solar system?",
+        "question_type": "multiple_choice",
+        "options": [
+          { "letter": "A", "text": "Jupiter" },
+          { "letter": "B", "text": "Saturn" },
+          { "letter": "C", "text": "Neptune" },
+          { "letter": "D", "text": "Uranus" }
+        ],
+        "correct_answer": "B",
+        "points": 100,
+        "timer_seconds": 30,
+        "explanation": "As of 2024, Saturn leads with 146 confirmed moons, narrowly beating Jupiter's 95."
+      },
+      {
+        "question_text": "What is the powerhouse of the cell?",
+        "question_type": "multiple_choice",
+        "options": [
+          { "letter": "A", "text": "Nucleus" },
+          { "letter": "B", "text": "Ribosome" },
+          { "letter": "C", "text": "Mitochondria" },
+          { "letter": "D", "text": "Golgi apparatus" }
+        ],
+        "correct_answer": "C",
+        "points": 80,
+        "timer_seconds": 20
+      },
+      {
+        "question_text": "Humans share approximately 98% of their DNA with which animal?",
+        "question_type": "short_answer",
+        "correct_answer": "Chimpanzee",
+        "points": 120,
+        "timer_seconds": 25
+      }
+    ]
+  },
+  {
+    "round": "Music Round",
+    "round_type": "music",
+    "questions": [
+      {
+        "question_text": "Name the artist who performed this song",
+        "question_type": "short_answer",
+        "media_url": "/samples/mystery-song-1.mp3",
+        "media_type": "audio",
+        "correct_answer": "Queen",
+        "points": 150,
+        "timer_seconds": 45
+      }
+    ]
+  },
+  {
+    "round": "Picture Round",
+    "round_type": "picture",
+    "questions": [
+      {
+        "question_text": "Name the landmark shown in the image",
+        "question_type": "short_answer",
+        "media_url": "/samples/landmark-1.jpg",
+        "media_type": "image",
+        "correct_answer": "Colosseum",
+        "points": 150,
+        "timer_seconds": 35
+      }
+    ]
+  },
+  {
+    "round": "Final Jeopardy",
+    "round_type": "final_jeopardy",
+    "questions": [
+      {
+        "question_text": "Before answering, wager some or all of your points! \n\nThis country has the most UNESCO World Heritage Sites in the world.",
+        "question_type": "short_answer",
+        "correct_answer": "Italy",
+        "points": 0,
+        "timer_seconds": 120,
+        "explanation": "Italy tops the list with 58 UNESCO World Heritage Sites as of 2024."
+      }
+    ]
+  }
+]
