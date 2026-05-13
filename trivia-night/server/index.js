@@ -1,4 +1,5 @@
-require('dotenv').config();
+// dotenv not needed on Railway — env vars are injected natively
+// require('dotenv').config(); // uncomment for local development
 const express = require('express');
 const http = require('http');
 const path = require('path');
